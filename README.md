@@ -40,4 +40,6 @@ Each section breaks down the functionality of the component and provides example
 ## Author
 
 This Regex Tutorial was created by Wren. As an experienced developer and regex enthusiast, Wren aims to simplify regex concepts and make them accessible to beginners. Feel free to reach out with any questions or suggestions through my <a href="https://github.com/nhunguyen-debug">GitHub profile</a>.
+![This is my deployed pictured](./images/deployed.gif)
+<br> This is my deployed link: https://nhunguyen-debug.github.io/Regex-Tutorial-From-Wren/
 
