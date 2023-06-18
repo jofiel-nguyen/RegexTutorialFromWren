@@ -1,0 +1,86 @@
+/* Basic styles for the app */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #header {
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  #header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  #table-of-contents {
+    float: left;
+    width: 25%;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  #tutorial-content {
+    float: left;
+    width: 50%;
+    padding: 20px;
+  }
+  
+  #author-section {
+    float: right;
+    width: 25%;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  #author-section a {
+    color: blue;
+  }
+  
+  /* Styling for the table of contents */
+  
+  #table-of-contents ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #table-of-contents li {
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for sections within the tutorial */
+  
+  section {
+    margin-bottom: 30px;
+  }
+  
+  section h2 {
+    margin-top: 0;
+    font-size: 20px;
+  }
+  
+  #scrollToTopBtn {
+    display: none; /* Hide the button by default */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 99;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+  
+  #scrollToTopBtn:hover {
+    opacity: 1;
+  }
+  
+  

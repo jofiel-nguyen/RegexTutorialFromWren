@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Regex Tutorial</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div id="header">
+    <h1>Regex Tutorial</h1>
+    <p>Welcome to the Regex Tutorial! This tutorial will help you understand regular expressions and how to use them effectively.</p>
+    <p>Regex Featured: This tutorial will explore a regular expression pattern for validating email addresses. The regex pattern is <code>/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/</code>.</p>
+  </div>
+  
+  <div id="table-of-contents">
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#anchors">Anchors</a></li>
+      <li><a href="#quantifiers">Quantifiers</a></li>
+      <li><a href="#grouping-constructs">Grouping Constructs</a></li>
+      <li><a href="#bracket-expressions">Bracket Expressions</a></li>
+      <li><a href="#character-classes">Character Classes</a></li>
+      <li><a href="#the-or-operator">The OR Operator</a></li>
+      <li><a href="#flags">Flags</a></li>
+      <li><a href="#character-escapes">Character Escapes</a></li>
+    </ul>
+  </div>
+  
+  <div id="tutorial-content">
+    <section id="anchors">
+      <h2>Anchors</h2>
+      <p>Anchors in regular expressions allow you to match patterns at specific positions within the text. They do not match any actual characters, but instead represent certain positions within the text.</p>
+      <p>There are two main types of anchors:</p>
+      <ul>
+        <li><code>^</code> - The caret symbol is used as the start anchor. It matches the beginning of a line or string.</li>
+        <li><code>$</code> - The dollar sign is used as the end anchor. It matches the end of a line or string.</li>
+      </ul>
+      <p>For example, the pattern <code>^Hello</code> will match the word "Hello" only if it appears at the beginning of a line or string. Similarly, the pattern <code>world$</code> will match the word "world" only if it appears at the end of a line or string.</p>
+      <p>By using anchors, you can enforce specific placement or position requirements for your regular expressions, making them more precise and targeted.</p>
+     
+    </section>
+    
+    <section id="quantifiers">
+      <h2>Quantifiers</h2>
+      <p>In regular expressions, quantifiers are used to specify the number of occurrences of a particular element or group.</p>
+      <p>Here are some commonly used quantifiers:</p>
+      <ul>
+        <li><code>*</code> - Matches zero or more occurrences of the preceding element.</li>
+        <li><code>+</code> - Matches one or more occurrences of the preceding element.</li>
+        <li><code>?</code> - Matches zero or one occurrence of the preceding element.</li>
+        <li><code>{n}</code> - Matches exactly <code>n</code> occurrences of the preceding element.</li>
+        <li><code>{n,}</code> - Matches at least <code>n</code> occurrences of the preceding element.</li>
+        <li><code>{n,m}</code> - Matches at least <code>n</code> and at most <code>m</code> occurrences of the preceding element.</li>
+      </ul>
+      <p>Quantifiers are usually placed after the element they apply to. For example, to match three consecutive digits, you can use the pattern <code>\d{3}</code>.</p>
+      <p>Remember that quantifiers are greedy by default, meaning they match as many occurrences as possible. If you want to match the minimum number of occurrences, you can use the non-greedy modifier <code>?</code>.</p>
+
+    </section>
+    
+    <section id="grouping-constructs">
+      <h2>Grouping Constructs</h2>
+      <p>Grouping constructs in regular expressions allow you to group multiple subpatterns together and treat them as a single unit. This is achieved by using parentheses ( ) to enclose the subpatterns.</p>
+      <p>Grouping constructs have several uses:</p>
+      <ul>
+        <li><strong>Capturing Groups:</strong> By enclosing a subpattern in parentheses, you can create a capturing group that captures and remembers the matched subpattern. The captured value can be accessed and used later in the regex or in the replacement text.</li>
+        <li><strong>Alternation:</strong> By using the vertical bar (|) inside grouping constructs, you can specify multiple alternatives. The regex engine will attempt to match each alternative, and if any of them succeed, the overall match succeeds.</li>
+        <li><strong>Grouping for Operators:</strong> Grouping constructs allow you to apply operators or modifiers to a group as a whole. For example, you can use quantifiers like *, +, or ? after a group to specify how many times the group should be matched.</li>
+      </ul>
+      <p>Here's an example that demonstrates the use of grouping constructs:</p>
+      <pre><code>/(ab)+/</code></pre>
+      <p>In this example, the grouping construct (ab) is repeated one or more times due to the presence of the + quantifier. This pattern will match sequences of "ab" characters such as "ab", "abab", "ababab", and so on.</p>
+    
+    </section>
+    
+    <section id="bracket-expressions">
+      <h2>Bracket Expressions</h2>
+      <p>Bracket expressions, also known as character classes, allow you to define a set of characters to match within square brackets.</p>
+      <p>Here's how you can use bracket expressions in a regex:</p>
+      <pre><code>/[abc]/</code></pre>
+      <p>The above regex will match any single character that is either "a", "b", or "c".</p>
+      <p>You can also use ranges to define a range of characters. For example:</p>
+      <pre><code>/[a-z]/</code></pre>
+      <p>The above regex will match any lowercase letter from "a" to "z".</p>
+      <p>Additionally, you can use the caret (^) symbol at the beginning of a bracket expression to negate the character set. For example:</p>
+      <pre><code>/[^0-9]/</code></pre>
+      <p>The above regex will match any character that is not a digit.</p>
+      <p>Bracket expressions provide a powerful way to match specific sets of characters in your regular expressions.</p>
+   
+    </section>
+    
+    <section id="character-classes">
+      <h2>Character Classes</h2>
+      <p>In regular expressions, character classes are enclosed within square brackets [] and allow you to specify a set of characters that can match a single position in the input string.</p>
+      <p>For example, the character class [aeiou] matches any vowel character.</p>
+      <p>Here are some common examples of character classes:</p>
+      <ul>
+        <li><code>[aeiou]</code>: Matches any vowel character.</li>
+        <li><code>[0-9]</code>: Matches any digit character.</li>
+        <li><code>[A-Za-z]</code>: Matches any uppercase or lowercase letter.</li>
+        <li><code>[^0-9]</code>: Matches any character that is not a digit.</li>
+      </ul>
+      <p>Character classes provide a powerful way to define patterns that match specific groups of characters in a flexible and concise manner.</p>
+      
+    </section>
+    
+    <section id="the-or-operator">
+      <h2>The OR Operator</h2>
+      <p>The OR operator, denoted by the vertical bar (|), allows you to match either one pattern or another. It provides a way to specify alternative options within a regular expression.</p>
+      <p>For example, the pattern <code>cat|dog</code> will match either "cat" or "dog" in the input text.</p>
+      <p>The OR operator can be used to create more complex patterns and provide flexibility in matching different alternatives. It is enclosed within parentheses when used alongside other components of a regular expression.</p>
+     
+    </section>
+    
+    
+    <section id="flags">
+      <h2>Flags</h2>
+      <p>Flags or modifiers in regular expressions are optional parameters that can be added after the closing delimiter of the regular expression pattern. They allow you to modify the behavior of the regex matching process.</p>
+      <p>Here are some commonly used flags:</p>
+      <ul>
+        <li><code>i</code> - Case-insensitive matching</li>
+        <li><code>g</code> - Global matching (matches all occurrences rather than stopping after the first match)</li>
+        <li><code>m</code> - Multiline matching</li>
+      </ul>
+      <p>For example, if you want to perform a case-insensitive search, you can add the <code>i</code> flag to your regex pattern like this: <code>/pattern/i</code>.</p>
+     
+    </section>
+    <section id="character-escapes">
+      <h2>Character Escapes</h2>
+      <p>Character escapes allow you to match special characters or characters with special meanings in regular expressions. By using a backslash (\) followed by a specific character, you can treat that character as a literal character instead of its special meaning.</p>
+      <p>Here are some commonly used character escapes:</p>
+      <ul>
+        <li><code>\d</code> - Matches any digit character (0-9)</li>
+        <li><code>\w</code> - Matches any word character (alphanumeric and underscore)</li>
+        <li><code>\s</code> - Matches any whitespace character (space, tab, newline)</li>
+        <li><code>\.</code> - Matches a literal period character</li>
+      </ul>
+      <p>Character escapes can be useful when you want to match specific characters or patterns without their special meaning. For example, if you want to match a period character (.), you need to escape it as <code>\.</code> because the unescaped period has a special meaning of matching any character except newline.</p>
+      
+    </section>
+  </div>
+  
+  <div id="author-section">
+    <h2>About the Author</h2>
+    <p>Hello, I'm Wren, the author of this Regex Tutorial. I have 1 years of experience working with regular expressions and enjoy sharing my knowledge with others. If you have any questions or feedback, feel free to reach out.</p>
+    <p>You can find more of my work and projects on my <a href="https://github.com/nhunguyen-debug">GitHub profile</a>.</p>
+  </div>
+  <button id="scrollToTopBtn" onclick="scrollToTop()">Scroll to Top</button>
+  
+  <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2023 Wren's Website</p>
+  </footer>
+</body>
+
+
+</html>
