@@ -65,4 +65,4 @@ Demonstrating the need for character escapes in specific scenarios.
 
 Hello, I'm Wren, the author of this Regex Tutorial. I have experience working with regular expressions and enjoy sharing my knowledge with others. If you have any questions or feedback, feel free to reach out.
 
-You can find more of my work and projects on my <a href ="github.com/nhunguyen-debug"> GitHub profile.
+You can find more of my work and projects on my [GitHub profile](https://github.com/nhunguyen-debug).
