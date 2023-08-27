@@ -87,7 +87,26 @@
       <p>Bracket expressions provide a powerful way to match specific sets of characters in your regular expressions.</p>
    
     </section>
-    
+    <section id="using-regex-in-javascript">
+        <h2>Using Regular Expressions in JavaScript</h2>
+        <p>Regular expressions are a powerful tool in JavaScript for pattern matching and text manipulation. You can use them with various string methods and functions to perform tasks like validation, searching, and replacing text.</p>
+        <p>Here are some common JavaScript functions where regular expressions are frequently used:</p>
+        <ul>
+          <li><code>test()</code>: This method tests a string against a regular expression pattern and returns <code>true</code> if the pattern is found, <code>false</code> otherwise.</li>
+          <li><code>match()</code>: It searches a string for matches to a regular expression pattern and returns an array of matches.</li>
+          <li><code>replace()</code>: You can use this method to replace text in a string based on a regular expression pattern.</li>
+          <li><code>split()</code>: This method splits a string into an array of substrings based on a regular expression pattern.</li>
+        </ul>
+        <p>Here's an example of how to use regular expressions in JavaScript:</p>
+        <pre><code>
+      // Using the test() method
+      const pattern = /\d+/; // Matches one or more digits
+      const text = "The price is $20.";
+      const isMatch = pattern.test(text);
+      console.log(isMatch); // Output: true
+        </code></pre>
+        <p>By understanding and utilizing regular expressions in JavaScript, you can greatly enhance your ability to work with and manipulate text efficiently.</p>
+      </section>
     <section id="character-classes">
       <h2>Character Classes</h2>
       <p>In regular expressions, character classes are enclosed within square brackets [] and allow you to specify a set of characters that can match a single position in the input string.</p>
